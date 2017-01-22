@@ -24,6 +24,7 @@ function update(target) {
     if (target.health >= 0/* && target.hits <= 100*/) {
         document.getElementById('hits').innerText = target.hits;
         document.getElementById('health').innerText = target.health.toFixed(1)
+        document.getElementById('corpse').innerHTML = ""
         
     } else if (target.health < 0/* && hits > 100*/) {
         document.getElementById('health').innerText = 0;
@@ -71,4 +72,12 @@ function calcMods(target){
         value += mod.modifier
         
     }return value
+}
+
+function handleReset(target){
+    var health = robot.health = 100
+    var items = robot.items = []
+    var hits = robot.hits = 0
+    update(target)
+    return health, hits, items
 }
