@@ -1,1 +1,42 @@
 /*Only use this file if you want to override bootstrap or create your own style*/
+
+html, body{
+    background:url("http://marketingland.com/wp-content/ml-loads/2015/03/rock_em_sock_em_robots_1920_1080.jpg")center;
+    background-size: cover;
+    /*width: auto;*/
+
+
+}
+
+
+#health, #hits, #name, #corpse {color:white;
+
+    
+}
+
+
+
+
+
+
+
+/*
+#cf {
+  position:relative;
+  height:281px;
+  width:450px;
+  margin:0 auto;
+}
+
+#cf img {
+  position:absolute;
+  left:0;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+}
+
+#cf img.top:hover {
+  opacity:0;
+}*/
