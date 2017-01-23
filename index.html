@@ -1,7 +1,8 @@
-<html>
+<html style:"background:url(http://orig15.deviantart.net/810b/f/2015/176/4/4/sexy_mario_gif_by_cjc728-d8yrakw.gif)">
 
 <head>
 	<title>Slap Object Game</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
 		crossorigin="anonymous">
 	<link rel="stylesheet" href="game.css">
@@ -9,31 +10,55 @@
 </head>
 
 <body>
+	<style id="background"> body {
+		background:url("mario-gif-start.gif") center;
+		background-repeat: no-repeat;
+	color: black;
+	}</style>
 	<div class="container">
-		<div class="row">
+		<div class="row row-1">
+			<div class="col-sm-offset-2 col-sm-2">
+				<button type="button" class="btn btn-primary"  onclick="onSlap(robot)">Slap</button>
+			</div>
+			<div class="col-sm-2">
+				<button type="button" class="btn btn-warning" onclick="onPunch(robot)">Punch</button>
+			</div>
+			<div class="col-sm-2">
+				<button type="button" class="btn btn-danger"  onclick="onKick(robot)">Kick</button>
+			</div>
+			<div class="col-sm-2">
+				<button type="button" class="btn btn-primary"  onclick="onSpecial(robot)"><img src="http://www.superluigibros.com/images/media/artwork/3ds/new_super_mario_bros_2/Main_characters/Gold_Mario_and_Silver_Luigi.jpg" height="80" /></button>
+			</div>
+		</div>
+		<div class="row row-2">
+			<div class="col-sm-offset-2 col-sm-2">
+				<h1 id="health">100</h1></div>	
+			<div class="col-sm-2">
+				<h1 id="hits">0</h1></div>
+			<div class="col-sm-2">
+				<h1 id="name">Mario</h1></div>
+			<div class="col-sm-3">
+				<h3 id="corpse"></h3>
+			</div>
+		</div>
+		<div class="row row-3">
+			<div class="col-sm-offset-2 col-sm-2">
+				<button type="button" class="btn btn-success" onclick="addMod(robot, 'shield')">Shield</button></div>
+			<div class="col-sm-2">
+				<button type="button" class="btn btn-warning" onclick="addMod(robot, 'star')">Star</button></div>
+			<div class="col-sm-2">
+				<button type="button" class="btn btn-danger" onclick="addMod(robot, 'lightning')">Lightning</button></div>
+			<div class="col-sm-2">
+				<button type="button" class="btn btn-info" onclick="handleReset(robot)">Reset</button>
+			</div>
+		</div>
+		<div class="row row-4">
 			<div class="col-sm-12">
-				<button onclick="onSlap(robot)">Slap</button>
-				<button onclick="onPunch(robot)">Punch</button>
-				<button onclick="onKick(robot)">Kick</button>
-				<button onclick="onSpecial(robot)"><img src="http://moviesmedia.ign.com/movies/image/article/110/1101591/rock_1277402344.jpg" height="80" /></button>
+				<div id="progress"><div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="" aria-valuemin="0" aria-valuemax="100" style="width:100%; height:2.5%;">Life = 100%</div>
+				</div>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-sm-12">
-				<h1 id="health">100</h1>
-				<h1 id="hits">0</h1>
-				<h1 id="name">The Dude</h1>
-				<h1 id="corpse"></h1>
-			</div>
-		</div>
-			<div class="row">
-				<div class="col-sm-12">
-				<button onclick="addMod(robot, 'shield')">Shield</button>
-				<button onclick="addMod(robot, 'star')">Star</button>
-				<button onclick="addMod(robot, 'lightning')">Lightning</button>
-				<button onclick="handleReset(robot)">Reset</button>
-			</div>
-		</div>
+			
 	</div>
 
 				<script src="game.js"></script>
