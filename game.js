@@ -94,11 +94,14 @@ function calcMods(target) {
 }
 
 function handleReset(target) {
-    var health = robot.health = 100
+    var health = robot.health = robot.start
     var items = robot.items = []
     var hits = robot.hits = 0
+    debugger
     update(target)
     progressBar(target)
+    background(target)
+
     return health, hits, items
 }
 function move() {
@@ -117,11 +120,11 @@ function move() {
 
 function background(target) {
     if (((target.health / target.start) * 100) <= 100 && ((target.health / target.start) * 100) >= 50) {
-        document.getElementById('background').innertext = 'body {background:url("mario-gif-start.gif") center;background-repeat:no-repeat;background-size: cover;'
+        document.getElementById('background').innerHTML = 'body {background:url("mario-gif-start.gif") center;background-repeat:no-repeat;}'
     } else if (((target.health / target.start) * 100) < 50 && ((target.health / target.start) * 100) >= 25) {
-        document.getElementById('background').innerHTML = 'body {background:url("mario-2.jpg") center;	background-repeat:no-repeat;'
+        document.getElementById('background').innerHTML = 'body {background:url("mario-2.jpg") center;	background-repeat:no-repeat;}'
     } else if (((target.health / target.start) * 100) < 25 && ((target.health / target.start) * 100) >= 0) {
-        document.getElementById('background').innerHTML = 'body {background:url("beat-up-mario.jpg") center;	background-repeat:no-repeat; background-size: cover; color:white;'
+        document.getElementById('background').innerHTML = 'body {background:url("beat-up-mario.jpg") center;	background-repeat:no-repeat; background-size: cover; color:white;}'
     }
 }
-
+// doument.body.style = {background:url("mario-gif-start.gif") center;background-repeat:no-repeat;}
