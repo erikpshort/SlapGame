@@ -18,21 +18,21 @@
 	<div class="container">
 		<div class="row row-1">
 			<div class="col-sm-offset-2 col-sm-2">
-				<button type="button" class="btn btn-primary"  onclick="onSlap(robot)">Slap</button>
+				<button type="button" class="btn btn-primary"  onclick="gameCtrl.attack('slap', gameCtrl.target)">Slap</button>
 			</div>
 			<div class="col-sm-2">
-				<button type="button" class="btn btn-warning" onclick="onPunch(robot)">Punch</button>
+				<button type="button" class="btn btn-warning" onclick="gameCtrl.attack('punch', gameCtrl.target)">Punch</button>
 			</div>
 			<div class="col-sm-2">
-				<button type="button" class="btn btn-danger"  onclick="onKick(robot)">Kick</button>
+				<button type="button" class="btn btn-danger"  onclick="gameCtrl.attack('kick', gameCtrl.target)">Kick</button>
 			</div>
 			<div class="col-sm-2">
-				<button type="button" class="btn btn-primary"  onclick="onSpecial(robot)"><img src="http://www.superluigibros.com/images/media/artwork/3ds/new_super_mario_bros_2/Main_characters/Gold_Mario_and_Silver_Luigi.jpg" height="80" /></button>
+				<button type="button" class="btn btn-primary"  onclick="gameCtrl.attack('special', gameCtrl.target)"><img src="http://www.superluigibros.com/images/media/artwork/3ds/new_super_mario_bros_2/Main_characters/Gold_Mario_and_Silver_Luigi.jpg" height="80" /></button>
 			</div>
 		</div>
 		<div class="row row-2">
 			<div class="col-sm-offset-2 col-sm-2">
-				<h1 id="health">100</h1></div>	
+				<h1 id="health">150</h1></div>	
 			<div class="col-sm-2">
 				<h1 id="hits">0</h1></div>
 			<div class="col-sm-2">
@@ -43,13 +43,13 @@
 		</div>
 		<div class="row row-3">
 			<div class="col-sm-offset-2 col-sm-2">
-				<button type="button" class="btn btn-success" onclick="addMod(robot, 'shield')">Shield</button></div>
+				<button type="button" class="btn btn-success" onclick="gameCtrl.addMod(gameCtrl.target, 'shield')">Shield</button></div>
 			<div class="col-sm-2">
-				<button type="button" class="btn btn-warning" onclick="addMod(robot, 'star')">Star</button></div>
+				<button type="button" class="btn btn-warning" onclick="gameCtrl.addMod(gameCtrl.target, 'star')">Star</button></div>
 			<div class="col-sm-2">
-				<button type="button" class="btn btn-danger" onclick="addMod(robot, 'lightning')">Lightning</button></div>
+				<button type="button" class="btn btn-danger" onclick="gameCtrl.addMod(gameCtrl.target, 'lightning')">Lightning</button></div>
 			<div class="col-sm-2">
-				<button type="button" class="btn btn-info" onclick="handleReset(robot)">Reset</button>
+				<button type="button" class="btn btn-info" onclick="gameCtrl.handleReset(gameCtrl.target)">Reset</button>
 			</div>
 		</div>
 		<div class="row row-4">
@@ -60,8 +60,9 @@
 		</div>
 			
 	</div>
-
-				<script src="game.js"></script>
+				<script src="GameService.js"></script>
+				<script src="GameController.js"></script>
+				<script src="app.js"></script>
 </body>
 
 </html>
